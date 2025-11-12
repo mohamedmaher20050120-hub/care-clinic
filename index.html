@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Care Clinic</title>
+     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"> <!-- للأيقونات -->
+    <link rel="stylesheet" href="style.css"> <!-- ملف CSS خارجي -->
+</head>
+  <body>
+    <!-- شريط علوي مع قوائم وإضافة قسم "الصفحات" -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Care Clinic</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#">الرئيسية</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">عن المجمع</a>
+                    </li>
+                    <li class="nav-item">
+
+                        <li class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle" href="#" id="contactDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+        التواصل
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="contactDropdown">
+        <li>
+            <a class="dropdown-item" href="https://www.facebook.com" target="_blank">
+                <i class="fab fa-facebook me-2 text-primary"></i> فيسبوك
+            </a>
+        </li>
+        <li>
+            <a class="dropdown-item" href="https://www.instagram.com" target="_blank">
+                <i class="fab fa-instagram me-2 text-danger"></i> إنستغرام
+            </a>
+        </li>
+    </ul>
+</li>
+                    </li>
+                    
+                    <!-- إضافة قسم "الصفحات" -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="pagesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            الصفحات
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="pagesDropdown">
+                            <li><a class="dropdown-item" href="#">صفحة الحجوزات</a></li>
+                            <li><a class="dropdown-item" href="#">صفحة الاطباء</a></li>
+                           
+                        </ul>
+                    </li>
+                </ul>
+                <!-- تسجيل الدخول على اليسار -->
+                <a href="#login" class="btn btn-light login-btn" data-bs-toggle="modal" data-bs-target="#loginModal">تسجيل الدخول</a>
+     <!-- نافذة تسجيل الدخول -->
+<div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="loginModalLabel">تسجيل الدخول</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" style="margin-right: auto;"></button>
+            </div>
+            <div class="modal-body text-center">
+                <p>اختر نوع الحساب:</p>
+                <div class="d-grid gap-3">
+                    <!-- زر مريض -->
+<button class="btn btn-primary d-flex align-items-center justify-content-center" data-bs-toggle="modal" data-bs-target="#patientModal">
+    <i class="fas fa-user me-2"></i> مريض
+</button>
+    <button class="btn btn-secondary d-flex align-items-center justify-content-center" data-bs-toggle="modal" data-bs-target="#nurseModal">
+    <i class="fas fa-user-nurse me-2"></i> ممرض
+</button>
+ <!-- زر ممرض -->
+<button class="btn btn-secondary d-flex align-items-center justify-content-center" data-bs-toggle="modal" data-bs-target="#nurseModal">
+    <i class="fas fa-user-nurse me-2"></i> طبيب
+</button>                             
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+    </div>
+</div>
+            </div>
+        </div>
+    </nav>
+    
+<!-- زر واتساب عائم -->
+<a href="https://wa.me/01273717047" target="_blank" class="whatsapp-btn">
+    <i class="fab fa-whatsapp fa-2x"></i>
+</a>
+<!-- أيقونة الوضع الليلي -->
+<button id="darkModeToggle" class="btn btn-light" style="position: fixed; top: 20px; left: 20px; z-index: 1000; border-radius: 50%; width: 50px; height: 50px; display: flex; justify-content: center; align-items: center;">
+    <i id="darkModeIcon" class="fas fa-moon"></i>
+</button>
+
+<!-- نافذة مريض -->
+<div class="modal fade" id="patientModal" tabindex="-1" aria-labelledby="patientModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="patientModalLabel">بيانات المريض</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="mb-3">
+                        <label for="patientName" class="form-label">الاسم</label>
+                        <input type="text" class="form-control" id="patientName" placeholder="أدخل اسمك">
+                    </div>
+                    <div class="mb-3">
+                        <label for="patientAge" class="form-label">السن</label>
+                        <input type="number" class="form-control" id="patientAge" placeholder="أدخل سنك">
+                    </div>
+                    <div class="mb-3">
+                        <label for="patientPhone" class="form-label">رقم الهاتف</label>
+                        <input type="tel" class="form-control" id="patientPhone" placeholder="أدخل رقم هاتفك">
+                    </div>
+                    <div class="mb-3">
+                        <label for="patientGender" class="form-label">النوع</label>
+                        <select class="form-select" id="patientGender">
+                            <option value="male">ذكر</option>
+                            <option value="female">أنثى</option>
+                        </select>
+                    </div>
+                    <div class="text-center">
+                        <button type="submit" class="btn btn-success">دخول</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- نافذة تسجيل الدخول للممرض --->
+<div class="modal fade" id="nurseModal" tabindex="-1" aria-labelledby="nurseModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="nurseModalLabel">تسجيل الدخول </h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="mb-3">
+                        <label for="nurseUsername" class="form-label">اسم المستخدم</label>
+                        <input type="text" class="form-control" id="nurseUsername" placeholder="أدخل اسم المستخدم">
+                    </div>
+                    <div class="mb-3">
+                        <label for="nursePassword" class="form-label">كلمة المرور</label>
+                        <input type="password" class="form-control" id="nursePassword" placeholder="أدخل كلمة المرور">
+                    </div>
+                    <div class="text-center">
+                        <button type="submit" class="btn btn-success">تسجيل الدخول</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <!-- واجهة كبيرة تشمل جميع التخصصات الطبية مع أيقونات -->
+    <section class="container-fluid my-5">
+        <h2 class="text-center mb-5">جميع التخصصات الطبية</h2>
+        <div class="row">
+            <!-- تخصص 1: أسنان --><div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+                <div class="card specialty-card h-100 text-center">
+                    <div class="card-body d-flex flex-column align-items-center">
+                        <i class="fas fa-tooth icon-img text-primary"></i> <!-- أيقونة أسنان -->
+                        <h5 class="card-title">طب الأسنان</h5>
+                        <p class="card-text">علاج الأسنان واللثة بأحدث التقنيات.</p>
+                        <a href="#doctors" class="btn btn-primary mt-auto">عرض الدكاترة</a>
+                    </div>
+                </div>
+            </div>
+            <!-- تخصص 2: قلب -->
+            <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+                <div class="card specialty-card h-100 text-center">
+                    <div class="card-body d-flex flex-column align-items-center">
+                        <i class="fas fa-heartbeat icon-img text-danger"></i> <!-- أيقونة قلب -->
+                        <h5 class="card-title">طب القلب</h5>
+                        <p class="card-text">تشخيص وعلاج أمراض القلب والأوعية الدموية.</p>
+                        <a href="#doctors" class="btn btn-primary mt-auto">عرض الدكاترة</a>
+                    </div>
+                </div>
+            </div>
+            <!-- تخصص 3: جلدية -->
+            <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+                <div class="card specialty-card h-100 text-center">
+                    <div class="card-body d-flex flex-column align-items-center">
+                        <i class="fas fa-hand-paper icon-img text-warning"></i> <!-- أيقونة جلد -->
+                        <h5 class="card-title">طب الجلدية</h5>
+                        <p class="card-text">علاج مشاكل الجلد والشعر والأظافر.</p>
+                        <a href="#doctors" class="btn btn-primary mt-auto">عرض الدكاترة</a>
+                    </div>
+                </div>
+            </div>
+            <!-- تخصص 4: عيون -->
+            <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+                <div class="card specialty-card h-100 text-center">
+                    <div class="card-body d-flex flex-column align-items-center">
+                        <i class="fas fa-eye icon-img text-info"></i> <!-- أيقونة عيون -->
+                        <h5 class="card-title">طب العيون</h5>
+                        <p class="card-text">فحص وعلاج مشاكل الرؤية والعيون.</p>
+                        <a href="#doctors" class="btn btn-primary mt-auto">عرض الدكاترة</a>
+                    </div>
+                </div>
+            </div>
+            <!-- تخصص 5: أنف وأذن -->
+            <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+                <div class="card specialty-card h-100 text-center">
+                    <div class="card-body d-flex flex-column align-items-center">
+                        <i class="fas fa-head-side-cough icon-img text-secondary"></i> <!-- أيقونة أنف وأذن -->
+                        <h5 class="card-title">أنف وأذن وحنجرة</h5>
+                        <p class="card-text">علاج مشاكل الأنف والأذن والحنجرة.</p>
+                        <a href="#doctors" class="btn btn-primary mt-auto">عرض الدكاترة</a>
+                    </div>
+                </div>
+            </div>
+            <!-- تخصص 6: نساء وتوليد -->
+            <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+                <div class="card specialty-card h-100 text-center">
+                    <div class="card-body d-flex flex-column align-items-center">
+                        <i class="fas fa-baby icon-img text-pink"></i> <!-- أيقونة نساء وتوليد -->
+                        <h5 class="card-title">نساء وتوليد</h5>
+                        <p class="card-text">رعاية صحة المرأة والحمل والولادة.</p>
+                        <a href="#doctors" class="btn btn-primary mt-auto">عرض الدكاترة</a>
+                        </div>
+                </div>
+            </div>
+            <!-- تخصص 7: أطفال -->
+            <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+                <div class="card specialty-card h-100 text-center">
+                    <div class="card-body d-flex flex-column align-items-center">
+                        <i class="fas fa-child icon-img text-success"></i> <!-- أيقونة أطفال -->
+                        <h5 class="card-title">طب الأطفال</h5>
+                        <p class="card-text">رعاية صحة الأطفال من الولادة إلى المراهقة.</p>
+                        <a href="#doctors" class="btn btn-primary mt-auto">عرض الدكاترة</a>
+                    </div>
+                </div>
+            </div>
+            <!-- تخصص 8: جراحة -->
+            <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+                <div class="card specialty-card h-100 text-center">
+                    <div class="card-body d-flex flex-column align-items-center">
+                        <i class="fas fa-user-md icon-img text-dark"></i> <!-- أيقونة جراحة -->
+                        <h5 class="card-title">الجراحة العامة</h5>
+                        <p class="card-text">عمليات جراحية متنوعة ومتقدمة.</p>
+                        <a href="#doctors" class="btn btn-primary mt-auto">عرض الدكاترة</a>
+                    </div>
+                </div>
+            </div>
+            <!-- تخصص 9: باطنة -->
+            <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+                <div class="card specialty-card h-100 text-center">
+                    <div class="card-body d-flex flex-column align-items-center">
+                        <i class="fas fa-stethoscope icon-img text-primary"></i> <!-- أيقونة باطنة -->
+                        <h5 class="card-title">الطب الباطني</h5>
+                        <p class="card-text">تشخيص وعلاج الأمراض الداخلية.</p>
+                        <a href="#doctors" class="btn btn-primary mt-auto">عرض الدكاترة</a>
+                    </div>
+                </div>
+            </div>
+            <!-- تخصص 10: عظام -->
+            <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+                <div class="card specialty-card h-100 text-center">
+                    <div class="card-body d-flex flex-column align-items-center">
+                        <i class="fas fa-bone icon-img text-muted"></i> <!-- أيقونة عظام -->
+                        <h5 class="card-title">طب العظام</h5>
+                        <p class="card-text">علاج مشاكل العظام والمفاصل.</p>
+                        <a href="#doctors" class="btn btn-primary mt-auto">عرض الدكاترة</a>
+                    </div>
+                </div>
+            </div>
+            <!-- تخصص 11: نفسية -->
+            <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+                <div class="card specialty-card h-100 text-center">
+                    <div class="card-body d-flex flex-column align-items-center">
+                        <i class="fas fa-brain icon-img text-purple"></i> <!-- أيقونة نفسية -->
+                        <h5 class="card-title">الطب النفسي</h5>
+                        <p class="card-text">دعم الصحة النفسية والعقلية.</p>
+                        <a href="#doctors" class="btn btn-primary mt-auto">عرض الدكاترة</a>
+                    </div>
+                </div>
+            </div>
+            <!-- تخصص 12: طوارئ -->
+            <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+                <div class="card specialty-card h-100 text-center">
+                    <div class="card-body d-flex flex-column align-items-center">
+                        <i class="fas fa-ambulance icon-img text-danger"></i> <!-- أيقونة طوارئ -->
+                        <h5 class="card-title">الطوارئ الطبية</h5>
+                        <p class="card-text">رعاية فورية للحالات الطارئة.</p>
+                        <a href="#doctors" class="btn btn-primary mt-auto">عرض الدكاترة</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer class="bg-dark text-white text-center py-3">
+        <p>&copy; 2023 مجمع العيادات. جميع الحقوق محفوظة.</p>
+    </footer>
+    </body>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="scripts.js"></script> <!-- ملف JavaScript خارجي -->
+</html>
