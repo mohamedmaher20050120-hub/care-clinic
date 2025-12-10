@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <title>لوحة تحكم المريض</title>
+    <link rel="stylesheet" href="dashboard.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+<button id="darkToggle" class="dark-btn"><i class="fa-solid fa-moon"></i></button>
+
+<div class="container">
+    <aside class="sidebar">
+        <div class="patient-info">  
+            <h3>محمد علي</h3>
+            <p>ذكر</p>
+            <p>35 سنة</p>
+            <p> 01273717047</p>
+        </div>
+        <nav>
+            <button data-page="vitals"><i class="fa-solid fa-heart-pulse"></i> القياسات الحيوية</button>
+            <button data-page="appointments"><i class="fa-solid fa-calendar-check"></i> الحجوزات القادمة</button>
+            <button data-page="medical"><i class="fa-solid fa-list-check"></i> السجل الطبي</button>
+            <button data-page="medications"><i class="fa-solid fa-pills"></i> الأدوية</button>
+            <button data-page="tests"><i class="fa-solid fa-vial"></i> الفحوصات</button>
+            <button data-page="settings"><i class="fa-solid fa-gear"></i> الإعدادات</button>
+        </nav>
+    </aside>
+
+    <main class="main-content">
+
+       <div id="vitals" class="page active">
+    <h2>القياسات الحيوية</h2>
+    <div class="cards">
+        <div class="card">
+            <i class="fa-solid fa-heart-pulse fa-3x"></i>
+            <h3>نبض القلب</h3>
+            <p>72 bpm</p>
+        </div>
+        <div class="card">
+            <i class="fa-solid fa-temperature-three-quarters fa-3x"></i>
+            <h3>درجة الحرارة</h3>
+            <p>37°C</p>
+        </div>
+        <div class="card">
+            <i class="fa-solid fa-lungs fa-3x"></i>
+            <h3>معدل الأكسجين</h3>
+            <p>98%</p>
+        </div>
+        <div class="card">
+            <i class="fa-solid fa-heart fa-3x"></i>
+            <h3>ضغط الدم</h3>
+            <p>120/80 mmHg</p>
+        </div>
+        <div class="card">
+            <i class="fa-solid fa-droplet fa-3x"></i>
+            <h3>مستوى السكر</h3>
+            <p>95 mg/dL</p>
+        </div>
+    </div>
+    
+</div>
+
+        <div id="appointments" class="page">
+            <h2>الحجوزات القادمة</h2>
+            <table>
+                <tr><th>التاريخ</th><th>الوقت</th><th>الطبيب</th><th>القسم</th><th>الحالة</th></tr>
+                <tr><td>15/12/2025</td><td>10:30 صباحًا</td><td>د. سامي</td><td>باطنة</td><td>مؤكد</td></tr>
+            </table>
+        </div>
+
+        <div id="medical" class="page">
+            <h2>السجل الطبي</h2>
+            <table>
+                <tr><th>التاريخ</th><th>الطبيب</th><th>التشخيص</th><th>العلاج</th></tr>
+                <tr><td>12/12/2025</td><td>د. سامي</td><td>التهاب رئوي</td><td>مضادات حيوية</td></tr>
+            </table>
+        </div>
+
+        <div id="medications" class="page">
+            <h2>الأدوية</h2>
+            <table>
+                <tr><th>الدواء</th><th>الجرعة</th><th>موعد الدواء</th></tr>
+                <tr><td>أموكسيسيلين</td><td>500 ملغ × 3</td><td>بعد الإفطار والغداء والعشاء</td></tr>
+            </table>
+        </div>
+
+        <div id="tests" class="page">
+            <h2>الفحوصات</h2>
+            <table>
+                <tr><th>التاريخ</th><th>الفحص</th><th>النتيجة</th></tr>
+                <tr><td>01/12/2025</td><td>تحليل دم</td><td>طبيعي</td></tr>
+            </table>
+        </div>
+
+        <div id="settings" class="page">
+            <h2>الإعدادات</h2>
+            <p>تغيير كلمة المرور</p>
+            <p>تفضيلات الحساب</p>
+        </div>
+
+    </main>
+</div>
+
+<script src="dashboard.js"></script>
+</body>
+</html>
