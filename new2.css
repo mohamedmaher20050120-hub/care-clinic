@@ -1,0 +1,383 @@
+/* ===== متغيرات الألوان ===== */
+/* ====== ROOT ====== */
+:root{
+  --gold:#C9A44C;
+  --blue:#0A4FD8;
+  --dark:#0B1020;
+  --glass:rgba(255,255,255,.08);
+  --text:#E5E7EB;
+}
+
+*{box-sizing:border-box}
+body{
+  margin:0;
+  font-family:'Segoe UI',sans-serif;
+  background:
+    radial-gradient(circle at top,  #ffffff67, #a0c6f85b 70%);
+  color:#000000;;
+}
+
+/* ====== HEADER ====== */
+header{
+  position:fixed;
+  top:0;width:100%;
+  padding:20px 80px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  background:rgba(255,255,255,.05);
+  backdrop-filter:blur(16px);
+  border-bottom:1px solid rgba(255,255,255,.1);
+  z-index:1000;
+}
+.logo{
+  font-size:30px;
+  font-weight:800;
+  color:var(--gold);
+  letter-spacing:1px;
+}
+nav a{
+  color:white;
+  margin:0 20px;
+  text-decoration:none;
+  font-weight:500;
+  position:relative;
+}
+nav a::after{
+  content:'';
+  position:absolute;
+  width:0;height:2px;
+  left:0;bottom:-6px;
+  background:var(--gold);
+  transition:.3s;
+}
+nav a:hover::after{width:100%}
+
+/* ====== HERO ====== */
+.hero{
+  height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  padding:0 20px;
+  background:
+    linear-gradient(rgba(11,16,32,.85),rgba(11,16,32,.95)),
+    url('../images/luxury-medical.jpg') center/cover;
+}
+.hero h1{
+  font-size:60px;
+  font-weight:900;
+}
+.hero p{
+  font-size:20px;
+  max-width:720px;
+  margin:20px auto;
+  color:#d1d5db;
+}
+.hero button{
+  padding:18px 50px;
+  border:none;
+  border-radius:50px;
+  background:linear-gradient(135deg,var(--gold),#f5d77a);
+  color:#000;
+  font-size:18px;
+  font-weight:700;
+  cursor:pointer;
+  box-shadow:0 20px 60px rgba(201,164,76,.5);
+  transition:.4s;
+}
+.hero button:hover{
+  transform:translateY(-6px);
+}
+
+/* ====== SECTIONS ====== */
+section{padding:120px 80px;text-align:center}
+h2{
+  font-size:42px;
+  margin-bottom:40px;
+  color:rgb(0, 0, 0);
+}
+
+/* ====== CARDS ====== */
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:30px;
+}
+.card,.doctor-card{
+  background:var(--glass);
+  backdrop-filter:blur(20px);
+  border-radius:26px;
+  padding:40px;
+  border:1px solid rgba(0, 0, 0, 0.12);
+  box-shadow:0 30px 90px rgba(0,0,0,.6);
+  transition:.4s;
+}
+.card:hover,.doctor-card:hover{
+  transform:translateY(-14px) scale(1.03);
+  border-color:var(--gold);
+}
+
+/* ====== MODAL ====== */
+.modal{
+  display:none;
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.7);
+  justify-content:center;
+  align-items:center;
+}
+.modal-content{
+  background:linear-gradient(180deg,#111827,#0B1020);
+  padding:40px;
+  border-radius:26px;
+  width:340px;
+  border:1px solid rgba(255,255,255,.15);
+  box-shadow:0 40px 120px rgba(0,0,0,.9);
+}
+input,select{
+  width:100%;
+  padding:14px;
+  margin:14px 0;
+  border-radius:10px;
+  border:none;
+}
+.modal-content button{
+  width:100%;
+  padding:14px;
+  background:var(--gold);
+  border:none;
+  border-radius:30px;
+  font-weight:700;
+  cursor:pointer;
+}
+
+/* ====== FOOTER ====== */
+footer{
+  background:#070b16;
+  padding:40px;
+  text-align:center;
+  color:#9ca3af;
+}
+footer strong{color:var(--gold)}
+
+.whatsapp{
+  position:fixed;bottom:25px;right:25px;
+  background:#25D366;color:#fff;
+  width:60px;height:60px;
+  border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  font-size:28px;text-decoration:none;
+  box-shadow:0 10px 30px rgba(0,0,0,.2)
+}
+
+:root {
+    --main-bg: #e6f0f3;
+    --sidebar-bg: #0096c7;
+    --card-bg: white;
+    --text-color: #003d5c;
+    --accent: #00b4d8;
+    --hover: #0077b6;
+}
+
+git init
+
+/* ===== القاعدة العامة للجسم ===== */
+body {
+    margin: 0;
+    font-family: "Cairo", sans-serif;
+    background: var(--main-bg);
+    color: var(--text-color);
+    transition: 0.3s ease;
+}
+
+/* ===== Dark Mode ===== */
+body.dark {
+    background: #0d1117;
+    color: white;
+}
+
+body.dark .sidebar {
+    background: #161b22;
+}
+
+body.dark .card {
+    background: #161b22;
+    color: white;
+}
+
+/* ===== الحاوية الرئيسية ===== */
+.container {
+    display: flex;
+    height: 100vh;
+}
+
+/* ===== زر Dark Mode ===== */
+.dark-btn {
+    position: fixed;
+    top: 15px;
+    left: 15px;
+    background: var(--accent);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+    font-size: 18px;
+    cursor: pointer;
+    z-index: 1000;
+}
+
+/* ===== الشريط الجانبي ===== */
+.sidebar {
+    width: 220px;
+    background: var(--sidebar-bg);
+    padding: 20px;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.sidebar img {
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+.sidebar h3 {
+    margin: 5px 0;
+}
+
+.sidebar p {
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+.sidebar nav {
+    width: 100%;
+}
+
+.sidebar button {
+    width: 100%;
+    background: transparent;
+    border: none;
+    color: white;
+    font-size: 16px;
+    padding: 12px;
+    text-align: right;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    border-radius: 8px;
+    margin-bottom: 8px;
+    transition: 0.3s;
+}
+
+.sidebar button:hover {
+    background: var(--hover);
+}
+
+.sidebar button.active {
+    background: var(--accent);
+}
+
+/* ===== المحتوى الرئيسي ===== */
+.main-content {
+    flex: 1;
+    padding: 30px;
+    overflow-y: auto;
+}
+
+/* ===== الصفحات ===== */
+.page {
+    display: none;
+}
+
+.page.active {
+    display: block;
+}
+
+/* ===== البطاقات الحيوية ===== */
+.cards {
+    display: flex;
+    gap: 25px;
+    margin-top: 25px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.card {
+    background: var(--card-bg);
+    padding: 30px;
+    border-radius: 20px;
+    min-width: 220px;
+    min-height: 180px;
+    text-align: center;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+}
+
+.card i {
+    margin-bottom: 15px;
+    color: var(--accent);
+}
+
+.card:hover {
+    transform: translateY(-10px) scale(1.05);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.25);
+    background: var(--accent);
+    color: white;
+}
+
+/* ===== الجداول ===== */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+
+table th,
+table td {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: center;
+}
+
+table th {
+    background: var(--accent);
+    color: white;
+}
+
+table tr:nth-child(even) {
+    background: #f2f2f2;
+}
+
+body.dark table th {
+    background: #00b4d8;
+}
+
+body.dark table tr:nth-child(even) {
+    background: #1b1f27;
+}
+
+body.dark table td {
+    color: white;
+}
+
+table tr:hover {
+    background: rgba(0,150,199,0.2);
+    transition: background 0.3s ease;
+}
+
+body.dark table tr:hover {
+    background: rgba(255,255,255,0.1);
+}
+
+/* ===== بطاقات الرسم البياني ===== */
+.chart-card canvas {
+    width: 100% !important;
+    height: 250px !important;
+}

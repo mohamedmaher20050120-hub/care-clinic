@@ -1,0 +1,310 @@
+
+:root{
+  --gold:#C9A44C;
+  --blue:#0A4FD8;
+  --dark:#0B1020;
+  --glass:rgba(255,255,255,.08);
+  --text:#f3efef;
+}
+.top-bar {
+  width: 100%;
+  padding: 10px 20px; 
+
+  color: rgb(15, 4, 4);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.dark-mode-btn {
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  color: #ffffff;
+  transition: transform 0.3s;
+}
+
+.dark-mode-btn:hover {
+  transform: rotate(20deg);
+}
+.navbar {
+    background-color: #3a3a3a !important; /* لون داكن مخصص */
+    color: #ffffff; /* لون النص */
+}
+*{box-sizing:border-box}
+
+/* ====== HEADER ====== */
+header{
+  position:fixed;
+  top:0;width:100%;
+  padding:20px 80px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  background:rgba(255,255,255,.05);
+  backdrop-filter:blur(16px);
+  border-bottom:1px solid rgba(255,255,255,.1);
+  z-index:1000;
+}
+.logo{
+  font-size:30px;
+  font-weight:800;
+  color:var(--gold);
+  letter-spacing:1px;
+}
+nav a{
+  color:white;
+  margin:0 20px;
+  text-decoration:none;
+  font-weight:500;
+  position:relative;
+}
+nav a::after{
+  content:'';
+  position:absolute;
+  width:0;height:2px;
+  left:0;bottom:-6px;
+  background:var(--gold);
+  transition:.3s;
+}
+nav a:hover::after{width:100%}
+body{
+  margin:0;
+  font-family:'Segoe UI',sans-serif;
+  background:
+    radial-gradient(circle at top, #ffffff67, #a0c6f85b 70%);
+  color:var(--text);
+}
+
+/* ====== HERO ====== */
+.hero{
+  height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  padding:0 20px;
+  background:
+    linear-gradient(rgba(11,16,32,.85),rgba(11,16,32,.95)),
+    url('https://i.pinimg.com/736x/31/27/02/31270202a6520c7b2b716343324e7b39.jpg') center/cover;
+}
+.hero h1{
+  font-size:60px;
+  font-weight:900;
+}
+.hero p{
+  font-size:20px;
+  max-width:720px;
+  margin:20px auto;
+  color:#d1d5db;
+}
+.hero button{
+  padding:18px 50px;
+  border:none;
+  border-radius:50px;
+  background:linear-gradient(135deg,var(--gold),#f5d77a);
+  color:#000;
+  font-size:18px;
+  font-weight:700;
+  cursor:pointer;
+  box-shadow:0 20px 60px rgba(201,164,76,.5);
+  transition:.4s;
+}
+.hero button:hover{
+  transform:translateY(-6px);
+}
+
+/* ====== SECTIONS ====== */
+section{padding:120px 80px;text-align:center}
+h2{
+  font-size:42px;
+  margin-bottom:40px;
+  color:white;
+}
+
+/* ====== CARDS ====== */
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:30px;
+}
+.card,.doctor-card{
+  background:var(--glass);
+  backdrop-filter:blur(20px);
+  border-radius:26px;
+  padding:40px;
+  border:1px solid rgba(255,255,255,.12);
+  box-shadow:0 30px 90px rgba(0,0,0,.6);
+  transition:.4s;
+}
+.card:hover,.doctor-card:hover{
+  transform:translateY(-14px) scale(1.03);
+  border-color:var(--gold);
+}
+/* زر واتساب عائم */
+.whatsapp-btn {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    background-color: #25D366;
+    color: white;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+}
+
+/* ====== MODAL ====== */
+.modal{
+  display:none;
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.7);
+  justify-content:center;
+  align-items:center;
+}
+.modal-content{
+  background:linear-gradient(180deg,#111827,#0B1020);
+  padding:40px;
+  border-radius:26px;
+  width:340px;
+  border:1px solid rgba(255,255,255,.15);
+  box-shadow:0 40px 120px rgba(0,0,0,.9);
+}
+input,select{
+  width:100%;
+  padding:14px;
+  margin:14px 0;
+  border-radius:10px;
+  border:none;
+}
+.modal-content button{
+  width:100%;
+  padding:14px;
+  background:var(--gold);
+  border:none;
+  border-radius:30px;
+  font-weight:700;
+  cursor:pointer;
+}
+
+/* ====== FOOTER ====== */
+footer{
+  background:#070b16;
+  padding:40px;
+  text-align:center;
+  color:#9ca3af;
+}
+footer strong{color:var(--gold)}
+
+
+.whatsapp-btn:hover {
+    background-color: #1ebe57;
+}
+/* الوضع الليلي */
+.dark-mode {
+    background-color: #121212 !important;
+    color: white !important; /* النصوص الافتراضية */
+}
+/* تغيير لون النصوص داخل خانات الإدخال في الوضع الليلي */
+.dark-mode input,
+.dark-mode select,
+.dark-mode textarea {
+    color: black !important; /* النصوص داخل الحقول */
+    background-color: white !important; /* خلفية الحقول */
+    border: 1px solid #ccc; /* حدود الحقول */
+}
+
+.dark-mode input::placeholder,
+.dark-mode textarea::placeholder {
+    color: #888; /* لون النصوص التوضيحية (Placeholder) */
+}
+/* تغيير لون زر تسجيل الدخول في الوضع الليلي */
+.dark-mode .login-btn {
+    color: black !important; /* النص باللون الأسود */
+    background-color: white !important; /* الخلفية باللون الأبيض */
+}
+/* الوضع الليلي */
+.dark-mode {
+    background-color: #121212 !important;
+    color: white !important; /* النصوص الافتراضية */
+}
+
+/* نافذة تسجيل الدخول في الوضع الليلي */
+.dark-mode .modal-content {
+    background-color: #1e1e1e !important; /* خلفية داكنة للـ Modal */
+    color: white !important; /* النصوص باللون الأبيض */
+    border: 1px solid #333; /* حدود خفيفة */
+}
+
+.dark-mode .modal-header {
+    border-bottom: 1px solid #444; /* حدود خفيفة */
+}
+
+.dark-mode .modal-body {
+    color: white !important; /* النصوص داخل الجسم */
+}
+
+.dark-mode .btn-close {
+    filter: invert(1); /* تغيير لون زر الإغلاق */
+}
+/* قائمة الصفحات في الوضع الليلي */
+.dark-mode .dropdown-menu {
+    background-color: #1e1e1e !important; /* خلفية داكنة للقائمة */
+    color: white !important; /* النصوص باللون الأبيض */
+    border: 1px solid #333; /* حدود خفيفة */
+}
+
+.dark-mode .dropdown-item {
+    color: white !important; /* النصوص داخل القائمة */
+}
+
+.dark-mode .dropdown-item:hover {
+    background-color: #333 !important; /* خلفية عند التمرير */
+}
+
+/* الوضع الليلي */
+.dark-mode {
+    background-color: #121212 !important;
+    color: white !important; /* النصوص الافتراضية */
+}
+
+/* استهداف جميع النصوص داخل الوضع الليلي */
+.dark-mode * {
+    color: white !important; /* جعل كل النصوص باللون الأبيض */
+}
+
+.dark-mode .specialty-card {
+    background-color: rgba(40, 40, 40, 0.95);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+.dark-mode .navbar {
+    background-color: rgba(33, 33, 33, 0.9);
+}
+
+.dark-mode footer {
+    background-color: #1c1c1c;
+}
+
+.dark-mode .whatsapp-btn {
+    background-color: #000000;
+}
+
+.dark-mode .whatsapp-btn:hover {
+    background-color: #070707;
+}
+
+.dark-mode .whatsapp-btn {
+    background-color: #000000;
+}
+.dark-mode .whatsapp-btn:hover {
+    background-color: #070707;
+}
+
